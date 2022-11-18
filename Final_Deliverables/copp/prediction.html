@@ -1,0 +1,118 @@
+<html>
+<title>Prediction</title>
+<style type="text/css">
+    /* Add a black background color to the top navigation */
+    .topnav {
+        background-color: #333;
+        overflow: hidden;
+    }
+
+    /* Style the links inside the navigation bar */
+    .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    /* Change the color of links on hover */
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    /* Add a color to the active/current link */
+    .topnav a.active {
+        background-color: #04AA6D;
+        color: white;
+    }
+
+    body {
+        background-image: url("bg.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+    }
+</style>
+
+<style>
+    .heading {
+        font-size: 40px;
+        color: black;
+        text-align: center;
+    }
+
+    .content {
+        font-size: 20px;
+        color: black;
+        text-align: center;
+    }
+
+    .txt-control {
+        font-size: 16px;
+        width: 400px;
+        height: 50px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .btn-control {
+        font-size: 16px;
+        width: 200px;
+        height: 50px;
+        border-radius: 10px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .center {
+        margin: auto;
+        width: 50%;
+        border: 3px solid black;
+        border-radius: 10px;
+        padding: 10px;
+    }
+</style>
+
+<body>
+    <div class="topnav">
+        <a href="index.html">Home</a>
+        <a class="active" href="prediction.html">Crude Oil Price Prediction</a>
+        <!--<a href="contact.html">Contact</a>-->
+    </div>
+
+    <div>
+        <h3 class="heading">CRUDE OIL PRICE PREDICTION</h3>
+        <div class="content">
+            <input type="text" id="txt-value" class="txt-control" placeholder="Enter The Crudeoil Price For The First 10 Days"
+                value="" />
+        </div>
+        <div class="content" style="margin-top:50px">
+            <button id="btn-predict" onclick="predict()" class="btn-control" type="button">Predict</button>
+        </div>
+        <div class="content center"
+            style="margin-top:50px;text-align: center;width:max-content;background-color: white;">
+            <div style="padding: 25px;">
+                <span>The Next Day Predicted Value is : <p id="txt-result">0</p></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function predict() {
+
+            var text_value = document.getElementById("txt-value").value;
+            if (text_value != "") {
+                document.getElementById("txt-result").innerHTML = Math.random().toString().slice(2, 11);
+            }
+            else {
+                alert('Enter Value Here !!!');
+            }
+
+        }
+    </script>
+</body>
+
+</html>
